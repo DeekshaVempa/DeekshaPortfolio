@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  /* Base colour palette: baby pink, white and black. */
+  /* The site should feel light and airy in light mode with high contrast text. */
+  --background: #fef7fb; /* very pale baby pink */
+  --foreground: #050505; /* near black for maximum contrast */
+  --accent: #f7b4cf; /* slightly deeper baby pink used for buttons and highlights */
+  --border: #e5a1bf; /* muted pink for borders */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* In dark mode, invert the palette: a deep black backdrop with pale pink text. */
+    --background: #0a0a0a;
+    --foreground: #fef7fb;
+    --accent: #4a2b3f; /* dark plum accent */
+    --border: #60324d;
+  }
+}
+
+/*
+ * Global styles
+ *
+ * We set a gentle pixel‑art inspired background using a repeating linear gradient.
+ * The pastel colours and small squares evoke an 8‑bit landscape without
+ * overwhelming the page. A Google Font import provides a retro pixel‑style
+ * typeface for headings while leaving the body text in a more legible sans‑serif.
+ */
+
+body {
+  /* Use a flat background colour without busy patterns. The subtle diagonal
+     gradient has been removed to improve clarity and allow other elements
+     to pop. Text uses the foreground variable for contrast. */
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/*
+ * Custom animations for decorative elements
+ */
+@keyframes cloud-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.animate-cloud-move {
+  animation: cloud-move 60s linear infinite;
+}
+
+.animate-cloud-move-slow {
+  animation: cloud-move 120s linear infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    /* In dark mode, use a solid backdrop colour instead of the previous checkered pattern. */
+    background-image: none;
+    background-color: var(--background);
+  }
+}
