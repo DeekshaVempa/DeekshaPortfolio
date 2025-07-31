@@ -57,6 +57,14 @@ export default function ExperiencePage() {
           <h1 className="text-4xl font-bold font-mono text-pink-300 mb-12">
             My Journey
           </h1>
+          {/* 👇 Add this button below the heading */}
+          <a
+            href="/VempatiDeekshaResume.pdf"
+            download
+            className="inline-block mt-4 px-6 py-2 border border-pink-400 text-pink-300 rounded-md hover:bg-pink-500/10 transition"
+          >
+            Download Resume
+          </a>
         </MotionDiv>
 
         {/* Roadmap Container */}
