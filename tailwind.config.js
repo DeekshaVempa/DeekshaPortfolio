@@ -6,13 +6,17 @@ module.exports = {
     ],
     theme: {
       extend: {
+        fontFamily: {
+          heading: ["'Press Start 2P'", "sans-serif"], // or another pixel font name
+        },
         colors: {
           background: "#ffffff",
           foreground: "#171717",
         },
       },
     },
-    darkMode: "class", 
+    darkMode: "class",
     plugins: [],
   };
+  
   
