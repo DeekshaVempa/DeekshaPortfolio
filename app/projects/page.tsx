@@ -31,7 +31,7 @@ const hospitalProject: Project = {
     "Multi-threaded Java system with Swing UI, backend optimization, indexing & caching for speed and scale.",
   tags: ["Java", "Swing", "MySQL", "OOP"],
   icon: <Hospital className="w-6 h-6 text-pink-300" />,
-  image: "/project2.png",
+  image: "/project2.jpeg",
   link: "https://github.com/DeekshaVempa/Hospital-Management-System"
 };
 
@@ -41,7 +41,7 @@ const audioProject: Project = {
     "Real-time translator using Python & NLP, 90% accuracy, and responsive front-end with React.js for accessibility.",
   tags: ["Python", "NLP", "React.js", "HTML", "CSS", "JavaScript"],
   icon: <Waves className="w-6 h-6 text-pink-300" />,
-  image: "/project3.png",
+  image: "/project3.jpeg",
   link: "https://github.com/DeekshaVempa/Audio-to-Sign-Language-Translator"
 };
 
@@ -59,8 +59,8 @@ const moreProjects: Project[] = [
     description: "Built a weather forecast app with live API integration, clean UI, and location-based weather data display.",
     tags: ["React", "OpenWeather API", "CSS"],
     icon: <Waves className="w-6 h-6 text-pink-300" />,
-    image: "/weather-app.png",
-    link: "https://github.com/DeekshaVempa/Weather-App"
+    image: "/weather-app.jpeg",
+    link: "https://github.com/DeekshaVempa/Weatherapp"
   },
   {
     title: "Blog Page",
