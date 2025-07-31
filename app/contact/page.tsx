@@ -20,11 +20,11 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          📮 Let's Connect!
+          📮 Let&apos;s Connect!
         </motion.h1>
 
         <p className="text-lg text-pink-200 mb-10 max-w-xl">
-          I'm always open to chatting with fellow devs, creatives, recruiters, and collaborators. Choose your favorite platform to say hi!
+          I&apos;m always open to chatting with fellow devs, creatives, recruiters, and collaborators. Choose your favorite platform to say hi!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">

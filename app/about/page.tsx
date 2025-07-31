@@ -46,10 +46,10 @@ export default function AboutPage() {
         >
           <Sparkles className="w-8 h-8 text-pink-400 mx-auto mb-4 animate-bounce" />
           <h1 className="text-5xl md:text-6xl font-bold font-mono text-pink-300 mb-6">
-            Hello, I'm Deeksha!
+            Hello, I&apos;m Deeksha!
           </h1>
           <p className="text-xl font-sans mb-12 text-white">
-            I craft engaging web experiences and love blending creativity with code. When I'm not programming, you'll find me exploring the world, cooking new recipes, or lifting weights.
+            I craft engaging web experiences and love blending creativity with code. When I&apos;m not programming, you&apos;ll find me exploring the world, cooking new recipes, or lifting weights.
           </p>
         </MotionDiv>
 
