@@ -61,7 +61,7 @@ export default function ExperiencePage() {
           <a
             href="/VempatiDeekshaResume.pdf"
             download
-            className="inline-block mt-4 px-6 py-2 border border-pink-400 text-pink-300 rounded-md hover:bg-pink-500/10 transition"
+            className="inline-block mb-10 px-6 py-2 border border-pink-500 rounded-full text-pink-300 font-mono text-sm hover:bg-pink-500/10 transition shadow-md hover:shadow-pink-500"
           >
             Download Resume
           </a>
@@ -70,7 +70,9 @@ export default function ExperiencePage() {
         {/* Roadmap Container */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-400 via-pink-300 to-purple-400 transform -translate-x-1/2 rounded-full"></div>
+          {/* Vertical Line (hidden on mobile) */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-400 via-pink-300 to-purple-400 transform -translate-x-1/2 rounded-full hidden md:block"></div>
+
 
           <div className="space-y-16">
             {experienceData.map((exp, i) => {

@@ -1,58 +1,66 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback } from "react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-/**
- * A simple navigation bar for the portfolio.
- *
- * Each navigation link plays a short beep using the Web Audio API on click.
- * This avoids bundling any external audio files while still providing
- * responsive feedback.
- */
+const links = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Experience", href: "/experience" },
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+  { name: "Contact", href: "/contact" },
+];
+
 export default function NavBar() {
-  /**
-   * Play a short beep sound using Web Audio API. We intentionally keep
-   * the duration brief and the frequency inoffensive to avoid startling
-   * users.
-   */
-  const playBeep = useCallback(() => {
-    // Older browsers expose webkitAudioContext; casting to unknown avoids eslint
-    // complaints about using the `any` type.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
-    const audioCtx = new AudioCtx();
-    const oscillator = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    oscillator.type = "sine";
-    oscillator.frequency.value = 600; // mid‑tone
-    gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
-    oscillator.start();
-    oscillator.stop(audioCtx.currentTime + 0.15);
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Experience", href: "/experience" },
-    { name: "Projects", href: "/projects" },
-    { name: "Skills", href: "/skills" },
-    { name: "Contact", href: "/contact" },
-  ];
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-center gap-4 py-2 px-4 bg-[var(--accent)]/80 dark:bg-[var(--accent)]/80 backdrop-blur border-b border-[var(--border)]">
-      {links.map(({ name, href }) => (
-        <Link
-          key={name}
-          href={href}
-          onClick={playBeep}
-          className="font-mono text-sm md:text-base px-3 py-1 border-2 border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] rounded shadow-sm hover:bg-[var(--accent)]/60 active:scale-95 transition"
-        >
-          {name}
+    <nav className="bg-gradient-to-r from-purple-900 to-pink-900 text-white shadow-md z-50 fixed w-full top-0">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link href="/" className="text-xl font-bold text-pink-300 font-mono">
+          Deeksha.dev
         </Link>
-      ))}
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-6 font-mono">
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="hover:text-pink-400 transition"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Toggle Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-black border-t border-pink-700 font-mono">
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="block px-6 py-3 text-white hover:bg-pink-900"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
