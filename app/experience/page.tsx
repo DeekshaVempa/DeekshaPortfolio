@@ -19,6 +19,18 @@ const experienceData = [
     full: "Built C# .NET Core microservices handling 1,000+ real-time messages via NATS. Automated CI/CD pipelines using GitHub Actions, Docker, and Kubernetes (50% faster builds). Boosted audit test coverage by 35% using BDD tests (Gherkin + MockServer). Executed 5K+ msg/sec performance tests, reducing latency by 15%."
   },
   {
+    title: "Software Engineer Mentor",
+    company: "OASIS",
+    period: "July 2025",
+    short: "Software Engineer mentor for Undergrad Students."
+  },
+  {
+    title: "Member",
+    company: "Rewriting the code",
+    period: "May 2025 - Present",
+    short: "Web development instructor for kids age 10+"
+  },
+  {
     title: "Software Engineer",
     company: "Science Utsav",
     period: "June 2022 — July 2023",
@@ -26,17 +38,12 @@ const experienceData = [
     full: "Built web platform used by 1,000+ users/month, improving UX and cutting registration time by 40%. Improved backend performance by 35% via SQL query & caching optimization. Reduced post-deployment bugs by 20% through testing and structured reviews."
   },
   {
-    title: "Software Engineer Mentor",
-    company: "OASIS",
-    period: "July 2025",
-    short: "Software Engineer mentor for Undergrad Students."
-  },
-  {
     title: "Web Development Instructor",
     company: "Science utsav",
     period: "June 2021 - September 2021",
     short: "Web development instructor for kids age 10+"
   }
+
 ];
 
 export default function ExperiencePage() {
